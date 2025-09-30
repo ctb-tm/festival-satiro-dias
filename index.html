@@ -14,7 +14,7 @@
             display: flex;
             align-items: center;
             background: #ffffff;
-            height: 140px;
+            height: 160px;
             padding-left: 10px;
             border-bottom: 1px solid #e8e8e8;
         }
@@ -23,7 +23,7 @@
             margin-right: 25px;
         }
         .header img.right {
-            height: 100px;
+            height: 160px;
             margin-left: 25px;
         }
         .header-title {
@@ -42,7 +42,7 @@
         .gradient-strip {
             width: 100%;
             height: 60px;
-            background: linear-gradient(to bottom, rgba(50, 224, 252, 0.05) 5%, rgba(50, 224, 252, 0.12) 75%, #fff 100%);
+            background: linear-gradient(to bottom, rgba(50,224,252,0.05) 5%, rgba(50,224,252,0.12) 75%, #fff 100%);
         }
         .menu {
             background: #0070a9;
@@ -69,9 +69,15 @@
         .main-page.active {
             display: block;
             padding: 30px 22px 0 22px;
+            min-height: 400px;
+        }
+        /* Fundo cyan para páginas 1, 2 e 3 */
+        .main-page.cyan-bg {
+            background: rgba(50,224,252,0.10);
+            min-height: 100vh;
         }
         .box {
-            background-color: rgba(50, 224, 252, 0.10);
+            background-color: rgba(50, 224, 252, 0.05) !important;
             border: 2px solid #19191b;
             border-radius: 10px;
             padding: 20px 20px 10px 20px;
@@ -91,7 +97,7 @@
             font-family: 'Roboto', sans-serif;
         }
         .images-box {
-            background-color: rgba(50,224,252,0.10);
+            background-color: rgba(50,224,252,0.05) !important;
             border: 2px solid #19191b;
             border-radius: 10px;
             padding: 18px;
@@ -129,7 +135,6 @@
             font-weight: 700;
             text-align: left;
         }
-        /* Alinhar dados numéricos à direita */
         .budget-table th.num, .budget-table td.num {
             text-align: right;
             font-variant-numeric: tabular-nums;
@@ -182,6 +187,30 @@
             display: block;
             background: #19191b;
         }
+        /* Página 5 logomarca */
+        .logo-box {
+            background: #fff;
+            border: 2px solid #19191b;
+            border-radius: 18px;
+            padding: 38px 10px 38px 10px;
+            margin: 55px auto 80px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 700px;
+        }
+        .logo-box img {
+            width: 350px;
+            max-width: 95vw;
+            height: auto;
+            display: block;
+        }
+        .logo-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #032340;
+            margin-bottom: 36px;
+        }
     </style>
     <script>
         function showPage(idx) {
@@ -215,10 +244,11 @@
         <a href="#">Histórico CTB</a>
         <a href="#">Festival</a>
         <a href="#">Orçamento</a>
+        <a href="#">Logomarca</a>
     </div>
 
     <!-- Página 1: Abertura com vídeo -->
-    <div class="main-page active">
+    <div class="main-page cyan-bg active">
         <div class="box">
             <div class="box-title">Bem-vindo ao Festival Amador de Ping Pong e Tênis de Mesa!</div>
             <div class="box-text">Promovendo esporte, inclusão e cidadania em Sátiro Dias.</div>
@@ -233,7 +263,7 @@
     </div>
 
     <!-- Página 2: Histórico CTB -->
-    <div class="main-page">
+    <div class="main-page cyan-bg">
         <div class="box">
             <div class="box-title">Histórico do Clube dos Tenistas da Bahia</div>
             <div class="box-text">
@@ -255,7 +285,7 @@
     </div>
 
     <!-- Página 3: Festival -->
-    <div class="main-page">
+    <div class="main-page cyan-bg">
         <div class="box">
             <div class="box-title">Sobre o Festival</div>
             <div class="box-text">
@@ -382,6 +412,14 @@
                     <th class="num">35.300</th>
                 </tr>
             </table>
+        </div>
+    </div>
+
+    <!-- Página 5: Logomarca grande em box branco -->
+    <div class="main-page">
+        <div class="logo-box">
+            <div class="logo-title">Logomarca Oficial do Evento</div>
+            <img src="satiro1.png" alt="Logomarca Festival Sátiro Dias" />
         </div>
     </div>
 
