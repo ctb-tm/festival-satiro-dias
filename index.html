@@ -116,7 +116,6 @@
             border-collapse: collapse;
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
-            text-align: left;
         }
         .budget-table th {
             background: #0070a9;
@@ -124,8 +123,10 @@
             font-weight: 700;
             text-align: left;
         }
-        .budget-table td.num, .budget-table th.num {
+        /* Alinhar dados numéricos à direita */
+        .budget-table th.num, .budget-table td.num {
             text-align: right;
+            font-variant-numeric: tabular-nums;
         }
         .budget-table th, .budget-table td {
             border: 1px solid #116693;
@@ -160,13 +161,20 @@
             justify-content: center; 
             margin-top: 30px;
         }
-        .video-box video, .video-box iframe {
+        .video-container {
             width: 100%;
             max-width: 540px;
-            height: 304px;
-            border-radius: 14px;
+            aspect-ratio: 16 / 9;
             background: #19191b;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             display: block;
+            background: #19191b;
         }
     </style>
     <script>
@@ -209,10 +217,12 @@
             <div class="box-text">Promovendo esporte, inclusão e cidadania em Sátiro Dias.</div>
         </div>
         <div class="video-box">
-            <!-- Alteração: Para carregamento universal utilize o formato mp4, com fallback (iframe YouTube se desejar). Certifique-se que o arquivo está correto/físico no servidor. -->
-            <video src="videosatiro.mp4" controls poster="satiro.png" preload="auto" playsinline>
-                Seu navegador não suporta o vídeo.
-            </video>
+            <div class="video-container">
+                <!-- Corrigido: sem poster, sem PNG, apenas vídeo. -->
+                <video src="videosatiro.mp4" controls preload="auto" playsinline>
+                    Seu navegador não suporta o vídeo.
+                </video>
+            </div>
         </div>
     </div>
 
@@ -328,8 +338,8 @@
                 <tr>
                     <td>Aparadores (estrutura)</td>
                     <td class="num">50</td>
-                    <td class="num">incluído/montagem</td>
-                    <td class="num">-</td>
+                    <td class="num" style="text-align: left;">incluído/montagem</td>
+                    <td class="num" style="text-align: left;">-</td>
                 </tr>
                 <tr>
                     <td>Transporte van</td>
