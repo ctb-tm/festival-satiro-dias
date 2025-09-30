@@ -51,6 +51,7 @@
             font-weight: 700;
             text-decoration: none;
             margin: 0 30px;
+            cursor: pointer;
         }
         .menu a:hover, .menu a.active {
             text-decoration: underline;
@@ -115,15 +116,20 @@
             border-collapse: collapse;
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
-        }
-        .budget-table th, .budget-table td {
-            border: 1px solid #116693;
-            padding: 9px 7px;
+            text-align: left;
         }
         .budget-table th {
             background: #0070a9;
             color: #ffffff;
             font-weight: 700;
+            text-align: left;
+        }
+        .budget-table td.num, .budget-table th.num {
+            text-align: right;
+        }
+        .budget-table th, .budget-table td {
+            border: 1px solid #116693;
+            padding: 9px 7px;
         }
         .budget-table tr:nth-child(even) {
             background: rgba(50,224,252,0.10);
@@ -149,11 +155,18 @@
         .footer p {
             margin: 2px 0;
         }
-        video {
+        .video-box {
+            display: flex; 
+            justify-content: center; 
+            margin-top: 30px;
+        }
+        .video-box video, .video-box iframe {
             width: 100%;
             max-width: 540px;
-            height: auto;
+            height: 304px;
             border-radius: 14px;
+            background: #19191b;
+            display: block;
         }
     </style>
     <script>
@@ -195,8 +208,9 @@
             <div class="box-title">Bem-vindo ao Festival Amador de Ping Pong e Tênis de Mesa!</div>
             <div class="box-text">Promovendo esporte, inclusão e cidadania em Sátiro Dias.</div>
         </div>
-        <div style="display: flex; justify-content: center; margin-top:30px;">
-            <video src="videosatiro.mp4" controls autoplay poster="satiro.png">
+        <div class="video-box">
+            <!-- Alteração: Para carregamento universal utilize o formato mp4, com fallback (iframe YouTube se desejar). Certifique-se que o arquivo está correto/físico no servidor. -->
+            <video src="videosatiro.mp4" controls poster="satiro.png" preload="auto" playsinline>
                 Seu navegador não suporta o vídeo.
             </video>
         </div>
@@ -207,14 +221,13 @@
         <div class="box">
             <div class="box-title">Histórico do Clube dos Tenistas da Bahia</div>
             <div class="box-text">
-                O CTB – Clube dos Tenistas da Bahia foi fundado em Salvador e destaca-se por ser um dos pioneiros no incentivo ao esporte inclusivo na Bahia, com projetos e parcerias desde 2015.
-                <br>- Atua na promoção de tênis, tênis de mesa, educação e cidadania.
-                <br>- Organizou mais de 60 torneios e oficinas em escolas públicas, praças e comunidades.
-                <br>- Participou de projetos sociais e ambientais como o “Tênis para Todos” e “Esporte é Vida”.
-                <br>- Oferece aulas regulares com profissionais voluntários e organização de ligas municipais.
-                <br>- Incentiva a inclusão feminina e de jovens em situação de vulnerabilidade social através de brinde de camisas e kits esportivos.
-                <br>- É reconhecido por parcerias com Federação Baiana de Tênis, prefeituras locais e entidades filantrópicas.
-                <br>- Dispõe de diversas estruturas esportivas, calendário anual de ações e forte atuação em projetos incentivados por leis estaduais e federais.
+                O Clube dos Tenistas da Bahia (CTB) foi fundado em Salvador com o propósito de democratizar o acesso ao esporte e à cidadania. Desde 2015, organiza torneios gratuitos, forma voluntários e promove ações em escolas municipais, comunidades, praças e projetos sociais.<br>
+                Realizou mais de 60 torneios oficiais e dezenas de oficinas para crianças e adolescentes em situação de risco social.<br>
+                O clube é reconhecido pelas parcerias com a Federação Baiana de Tênis, órgãos públicos, entidades filantrópicas e federais de incentivo ao esporte.<br>
+                Seu calendário é anual e contempla campeonatos, clínicas gratuitas, ações ambientais, distribuição de brindes, camisetas e kits esportivos.<br>
+                O CTB incentiva principalmente a inclusão social, com atividades voltadas para meninas e jovens com deficiência.<br>
+                Dispõe de estruturas para tênis e tênis de mesa, e lança projetos inovadores como “Tênis para Todos” e “Esporte é Vida”.<br>
+                O clube atua também em leis de incentivo estaduais e federais, estimulando novos talentos no cenário baiano e brasileiro.
             </div>
         </div>
         <div class="images-box">
@@ -258,26 +271,99 @@
         <div class="budget-box">
             <div class="budget-title">Orçamento Detalhado</div>
             <table class="budget-table">
-                <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Total (R$)</th></tr>
-                <tr><td>Kits de mesa (aluguel)</td><td>4</td><td>1.000</td><td>4.000</td></tr>
-                <tr><td>Camisas personalizadas</td><td>110</td><td>30</td><td>3.300</td></tr>
-                <tr><td>Raquetes de tênis de mesa</td><td>20</td><td>150</td><td>3.000</td></tr>
-                <tr><td>Hospedagem (4 quartos, 1 diária)</td><td>4</td><td>150</td><td>600</td></tr>
-                <tr><td>Diárias árbitros</td><td>6</td><td>500</td><td>3.000</td></tr>
-                <tr><td>Diárias carregadores</td><td>2</td><td>250</td><td>500</td></tr>
-                <tr><td>Diária coordenação</td><td>1</td><td>2.000</td><td>2.000</td></tr>
-                <tr><td>Alimentação equipe</td><td>10</td><td>100</td><td>1.000</td></tr>
-                <tr><td>Aparadores (estrutura)</td><td>50</td><td>incluso/montagem</td><td>-</td></tr>
-                <tr><td>Transporte van</td><td>1</td><td>5.000</td><td>5.000</td></tr>
-                <tr><td>Transporte caminhão</td><td>1</td><td>5.000</td><td>5.000</td></tr>
-                <tr><td>Emissão de nota fiscal (imposto)</td><td>1</td><td>1.500</td><td>1.500</td></tr>
-                <tr><td>Prestação de contas</td><td>1</td><td>1.200</td><td>1.200</td></tr>
-                <tr><td>Backdrop</td><td>1</td><td>1.200</td><td>1.200</td></tr>
-                <tr><th colspan="3">Total Geral Atualizado</th>
-                    <th>
-                        <!-- Valor calculado abaixo -->
-                        35.300
-                    </th>
+                <tr>
+                    <th>Item</th>
+                    <th class="num">Quantidade</th>
+                    <th class="num">Valor Unitário</th>
+                    <th class="num">Total (R$)</th>
+                </tr>
+                <tr>
+                    <td>Kits de mesa (aluguel)</td>
+                    <td class="num">4</td>
+                    <td class="num">1.000</td>
+                    <td class="num">4.000</td>
+                </tr>
+                <tr>
+                    <td>Camisas personalizadas</td>
+                    <td class="num">110</td>
+                    <td class="num">30</td>
+                    <td class="num">3.300</td>
+                </tr>
+                <tr>
+                    <td>Raquetes de tênis de mesa</td>
+                    <td class="num">20</td>
+                    <td class="num">150</td>
+                    <td class="num">3.000</td>
+                </tr>
+                <tr>
+                    <td>Hospedagem (4 quartos, 1 diária)</td>
+                    <td class="num">4</td>
+                    <td class="num">150</td>
+                    <td class="num">600</td>
+                </tr>
+                <tr>
+                    <td>Diárias árbitros</td>
+                    <td class="num">6</td>
+                    <td class="num">500</td>
+                    <td class="num">3.000</td>
+                </tr>
+                <tr>
+                    <td>Diárias carregadores</td>
+                    <td class="num">2</td>
+                    <td class="num">250</td>
+                    <td class="num">500</td>
+                </tr>
+                <tr>
+                    <td>Diária coordenação</td>
+                    <td class="num">1</td>
+                    <td class="num">2.000</td>
+                    <td class="num">2.000</td>
+                </tr>
+                <tr>
+                    <td>Alimentação equipe</td>
+                    <td class="num">10</td>
+                    <td class="num">100</td>
+                    <td class="num">1.000</td>
+                </tr>
+                <tr>
+                    <td>Aparadores (estrutura)</td>
+                    <td class="num">50</td>
+                    <td class="num">incluído/montagem</td>
+                    <td class="num">-</td>
+                </tr>
+                <tr>
+                    <td>Transporte van</td>
+                    <td class="num">1</td>
+                    <td class="num">5.000</td>
+                    <td class="num">5.000</td>
+                </tr>
+                <tr>
+                    <td>Transporte caminhão</td>
+                    <td class="num">1</td>
+                    <td class="num">5.000</td>
+                    <td class="num">5.000</td>
+                </tr>
+                <tr>
+                    <td>Emissão de nota fiscal (imposto)</td>
+                    <td class="num">1</td>
+                    <td class="num">1.500</td>
+                    <td class="num">1.500</td>
+                </tr>
+                <tr>
+                    <td>Prestação de contas</td>
+                    <td class="num">1</td>
+                    <td class="num">1.200</td>
+                    <td class="num">1.200</td>
+                </tr>
+                <tr>
+                    <td>Backdrop</td>
+                    <td class="num">1</td>
+                    <td class="num">1.200</td>
+                    <td class="num">1.200</td>
+                </tr>
+                <tr>
+                    <th colspan="3" style="text-align:right">Total Geral Atualizado</th>
+                    <th class="num">35.300</th>
                 </tr>
             </table>
         </div>
