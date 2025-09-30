@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Festival Amador de Ping Pong e Tênis de Mesa – Sátiro Dias/BA</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #0070a9 0%, #32e0fc 30%, #ffffff 80%, #00233b 100%);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background: #00233b;
+            height: 140px;
+            padding-left: 10px;
+        }
+        .header img.left {
+            height: 100px;
+            margin-right: 25px;
+        }
+        .header img.right {
+            height: 100px;
+            margin-left: 25px;
+        }
+        .header-title {
+            flex: 1;
+            text-align: center;
+            color: #032340;
+            font-size: 32px;
+            font-weight: 700;
+            background: #1a3c5c;
+            border-radius: 10px;
+            padding: 16px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu {
+            background: #0070a9;
+            display: flex;
+            justify-content: center;
+            padding: 14px 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .menu a {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 0 30px;
+        }
+        .menu a:hover, .menu a.active {
+            text-decoration: underline;
+            color: #32e0fc;
+        }
+        .main-page {
+            display: none;
+        }
+        .main-page.active {
+            display: block;
+            padding: 30px 22px 0 22px;
+        }
+        .box {
+            background-color: rgba(50, 224, 252, 0.10);
+            border: 2px solid #19191b;
+            border-radius: 10px;
+            padding: 20px 20px 10px 20px;
+            margin-bottom: 20px;
+        }
+        .box-title {
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            color: #0a0a0c;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .box-text {
+            font-size: 14px;
+            color: #0a0a0c;
+            line-height: 1.7;
+            font-family: 'Roboto', sans-serif;
+        }
+        .images-box {
+            background-color: rgba(50,224,252,0.10);
+            border: 2px solid #19191b;
+            border-radius: 10px;
+            padding: 18px;
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 22px;
+        }
+        .images-box img {
+            max-width: 23%;
+            border-radius: 9px;
+        }
+        .budget-box {
+            background-color: rgba(50, 224, 252, 0.10);
+            border: 2px solid #19191b;
+            border-radius: 10px;
+            padding: 16px 24px 22px 24px;
+            margin-bottom: 30px;
+        }
+        .budget-title {
+            font-size: 18px;
+            color: #0a0a0c;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+        .budget-table th, .budget-table td {
+            border: 1px solid #116693;
+            padding: 9px 7px;
+        }
+        .budget-table th {
+            background: #0070a9;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .budget-table tr:nth-child(even) {
+            background: rgba(50,224,252,0.10);
+        }
+        .budget-table tr:nth-child(odd) {
+            background: rgba(0, 35, 59, 0.06);
+        }
+        .footer {
+            background: #00233b;
+            padding: 24px 10px 23px 10px;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 16px;
+            margin-top: 50px;
+        }
+        .footer strong {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+        .footer p {
+            margin: 2px 0;
+        }
+    </style>
+    <script>
+        function showPage(idx) {
+            document.querySelectorAll('.main-page').forEach((pg, i) => {
+                pg.classList.toggle('active', i === idx);
+            });
+            document.querySelectorAll('.menu a').forEach((a, i) => {
+                a.classList.toggle('active', i === idx);
+            });
+        }
+        window.onload = function() {
+            showPage(0);
+            document.querySelectorAll('.menu a').forEach((a, i) => {
+                a.onclick = function(e) {
+                    e.preventDefault();
+                    showPage(i);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="ctb.png" alt="Clube dos Tenistas da Bahia" class="left" />
+        <div class="header-title">Festival Amador de Ping Pong e Tênis de Mesa – Sátiro Dias/BA</div>
+        <img src="satiro.png" alt="Sátiro Dias" class="right" />
+    </div>
+    <div class="menu">
+        <a href="#">Abertura</a>
+        <a href="#">Histórico CTB</a>
+        <a href="#">Festival</a>
+        <a href="#">Orçamento</a>
+    </div>
+
+    <!-- Página 1: Abertura com vídeo -->
+    <div class="main-page active">
+        <div class="box">
+            <div class="box-title">Bem-vindo ao Festival Amador de Ping Pong e Tênis de Mesa!</div>
+            <div class="box-text">Promovendo esporte, inclusão e cidadania em Sátiro Dias.</div>
+        </div>
+        <div style="display: flex; justify-content: center; margin-top:30px;">
+            <video src="videosatiro.mp4" controls autoplay style="max-width:80%; border-radius:14px;" poster="satiro.png">
+                Seu navegador não suporta o vídeo.
+            </video>
+        </div>
+    </div>
+
+    <!-- Página 2: Histórico CTB -->
+    <div class="main-page">
+        <div class="box">
+            <div class="box-title">Histórico do Clube dos Tenistas da Bahia</div>
+            <div class="box-text">
+                O CTB, fundado em Salvador-BA, é o primeiro clube registrado com modelo voltado para atividades gratuitas à comunidade, fomento do esporte e projetos de cidadania. Desde 2015, oferece projetos, aulas e torneios visando inclusão, desenvolvimento esportivo, educação e qualidade de vida, atendendo crianças e adolescentes em situação de vulnerabilidade, além de parcerias e eventos regulares.<br>
+                Foco: tênis, tênis de mesa, projetos em escolas, eventos esportivos e leis incentivadas.
+            </div>
+        </div>
+        <div class="images-box">
+            <img src="ctb1.jpg" alt="CTB imagem 1"/>
+            <img src="ctb2.jpg" alt="CTB imagem 2"/>
+            <img src="ctb3.jpg" alt="CTB imagem 3"/>
+            <img src="ctb4.jpg" alt="CTB imagem 4"/>
+        </div>
+    </div>
+
+    <!-- Página 3: Festival -->
+    <div class="main-page">
+        <div class="box">
+            <div class="box-title">Sobre o Festival</div>
+            <div class="box-text">
+                Realizado para 80 atletas, com torneios amadores, capacitação de voluntários e árbitros, incentivo à participação, cidadania e sustentabilidade.<br>
+                Metas: integração comunitária, oficinas formativas, acesso igualitário ao esporte e contrapartidas sociais para escolas e associações.
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">Metodologia</div>
+            <div class="box-text">
+                - Oficina de capacitação para voluntários e atletas.<br>
+                - Torneio amador em várias categorias.<br>
+                - Estrutura esportiva completa, equipe técnica, apoio logístico, alimentação e hospedagem.
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">Contrapartidas Sociais</div>
+            <div class="box-text">
+                - Disponibilização de materiais esportivos.<br>
+                - Mini-oficinas pós-evento.<br>
+                - Registro em vídeo e relatório social.
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 4: Orçamento -->
+    <div class="main-page">
+        <div class="budget-box">
+            <div class="budget-title">Orçamento Detalhado</div>
+            <table class="budget-table">
+                <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Total (R$)</th></tr>
+                <tr><td>Kits de mesa (aluguel)</td><td>4</td><td>500</td><td>2.000</td></tr>
+                <tr><td>Camisas personalizadas</td><td>110</td><td>30</td><td>3.300</td></tr>
+                <tr><td>Hospedagem (4 quartos, 1 diária)</td><td>4</td><td>150</td><td>600</td></tr>
+                <tr><td>Diárias árbitros</td><td>6</td><td>500</td><td>3.000</td></tr>
+                <tr><td>Diárias carregadores</td><td>2</td><td>250</td><td>500</td></tr>
+                <tr><td>Diária coordenação</td><td>1</td><td>2.000</td><td>2.000</td></tr>
+                <tr><td>Alimentação equipe</td><td>10</td><td>100</td><td>1.000</td></tr>
+                <tr><td>Aparadores (estrutura)</td><td>50</td><td>incluso/montagem</td><td>-</td></tr>
+                <tr><td>Transporte van</td><td>1</td><td>5.000</td><td>5.000</td></tr>
+                <tr><td>Transporte caminhão</td><td>1</td><td>5.000</td><td>5.000</td></tr>
+                <tr><td>Emissão de nota fiscal (imposto)</td><td>1</td><td>1.000</td><td>1.000</td></tr>
+                <tr><td>Prestação de contas</td><td>1</td><td>1.200</td><td>1.200</td></tr>
+                <tr><td>Backdrop</td><td>1</td><td>1.200</td><td>1.200</td></tr>
+                <tr><th colspan="3">Total Geral Atualizado</th><th>25.800</th></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>Clube dos Tenistas da Bahia</strong>
+        <p>CNPJ 24.146.328/0001-16</p>
+        <p>Paulo Carneiro - CEO</p>
+        <p>paulo@ctb-ba.com.br</p>
+        <p>71-98530-4903</p>
+    </div>
+</body>
+</html>
