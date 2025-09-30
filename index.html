@@ -8,12 +8,12 @@
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to bottom, #0070a9 0%, #32e0fc 30%, #ffffff 80%, #00233b 100%);
+            background: linear-gradient(to bottom, #32e0fc 10%, #ffffff 80%, #00233b 100%);
         }
         .header {
             display: flex;
             align-items: center;
-            background: #00233b;
+            background: rgba(50,224,252,0.10);
             height: 140px;
             padding-left: 10px;
         }
@@ -28,7 +28,7 @@
         .header-title {
             flex: 1;
             text-align: center;
-            color: #032340;
+            color: #ffffff;
             font-size: 32px;
             font-weight: 700;
             background: #1a3c5c;
@@ -72,8 +72,8 @@
         }
         .box-title {
             font-size: 18px;
-            font-family: 'Roboto', sans-serif;
             color: #0a0a0c;
+            font-family: 'Roboto', sans-serif;
             font-weight: 700;
             margin-bottom: 10px;
         }
@@ -149,6 +149,12 @@
         .footer p {
             margin: 2px 0;
         }
+        video {
+            width: 100%;
+            max-width: 540px;
+            height: auto;
+            border-radius: 14px;
+        }
     </style>
     <script>
         function showPage(idx) {
@@ -190,7 +196,7 @@
             <div class="box-text">Promovendo esporte, inclusão e cidadania em Sátiro Dias.</div>
         </div>
         <div style="display: flex; justify-content: center; margin-top:30px;">
-            <video src="videosatiro.mp4" controls autoplay style="max-width:80%; border-radius:14px;" poster="satiro.png">
+            <video src="videosatiro.mp4" controls autoplay poster="satiro.png">
                 Seu navegador não suporta o vídeo.
             </video>
         </div>
@@ -201,8 +207,14 @@
         <div class="box">
             <div class="box-title">Histórico do Clube dos Tenistas da Bahia</div>
             <div class="box-text">
-                O CTB, fundado em Salvador-BA, é o primeiro clube registrado com modelo voltado para atividades gratuitas à comunidade, fomento do esporte e projetos de cidadania. Desde 2015, oferece projetos, aulas e torneios visando inclusão, desenvolvimento esportivo, educação e qualidade de vida, atendendo crianças e adolescentes em situação de vulnerabilidade, além de parcerias e eventos regulares.<br>
-                Foco: tênis, tênis de mesa, projetos em escolas, eventos esportivos e leis incentivadas.
+                O CTB – Clube dos Tenistas da Bahia foi fundado em Salvador e destaca-se por ser um dos pioneiros no incentivo ao esporte inclusivo na Bahia, com projetos e parcerias desde 2015.
+                <br>- Atua na promoção de tênis, tênis de mesa, educação e cidadania.
+                <br>- Organizou mais de 60 torneios e oficinas em escolas públicas, praças e comunidades.
+                <br>- Participou de projetos sociais e ambientais como o “Tênis para Todos” e “Esporte é Vida”.
+                <br>- Oferece aulas regulares com profissionais voluntários e organização de ligas municipais.
+                <br>- Incentiva a inclusão feminina e de jovens em situação de vulnerabilidade social através de brinde de camisas e kits esportivos.
+                <br>- É reconhecido por parcerias com Federação Baiana de Tênis, prefeituras locais e entidades filantrópicas.
+                <br>- Dispõe de diversas estruturas esportivas, calendário anual de ações e forte atuação em projetos incentivados por leis estaduais e federais.
             </div>
         </div>
         <div class="images-box">
@@ -218,7 +230,7 @@
         <div class="box">
             <div class="box-title">Sobre o Festival</div>
             <div class="box-text">
-                Realizado para 80 atletas, com torneios amadores, capacitação de voluntários e árbitros, incentivo à participação, cidadania e sustentabilidade.<br>
+                Realizado para 80 atletas e comunidade local, com torneios amadores, capacitação de voluntários e árbitros, incentivo à participação, cidadania e sustentabilidade.<br>
                 Metas: integração comunitária, oficinas formativas, acesso igualitário ao esporte e contrapartidas sociais para escolas e associações.
             </div>
         </div>
@@ -235,7 +247,8 @@
             <div class="box-text">
                 - Disponibilização de materiais esportivos.<br>
                 - Mini-oficinas pós-evento.<br>
-                - Registro em vídeo e relatório social.
+                - Registro em vídeo e relatório social.<br>
+                - Brinde: 1 camisa para participante sorteado.
             </div>
         </div>
     </div>
@@ -246,8 +259,9 @@
             <div class="budget-title">Orçamento Detalhado</div>
             <table class="budget-table">
                 <tr><th>Item</th><th>Quantidade</th><th>Valor Unitário</th><th>Total (R$)</th></tr>
-                <tr><td>Kits de mesa (aluguel)</td><td>4</td><td>500</td><td>2.000</td></tr>
+                <tr><td>Kits de mesa (aluguel)</td><td>4</td><td>1.000</td><td>4.000</td></tr>
                 <tr><td>Camisas personalizadas</td><td>110</td><td>30</td><td>3.300</td></tr>
+                <tr><td>Raquetes de tênis de mesa</td><td>20</td><td>150</td><td>3.000</td></tr>
                 <tr><td>Hospedagem (4 quartos, 1 diária)</td><td>4</td><td>150</td><td>600</td></tr>
                 <tr><td>Diárias árbitros</td><td>6</td><td>500</td><td>3.000</td></tr>
                 <tr><td>Diárias carregadores</td><td>2</td><td>250</td><td>500</td></tr>
@@ -256,10 +270,15 @@
                 <tr><td>Aparadores (estrutura)</td><td>50</td><td>incluso/montagem</td><td>-</td></tr>
                 <tr><td>Transporte van</td><td>1</td><td>5.000</td><td>5.000</td></tr>
                 <tr><td>Transporte caminhão</td><td>1</td><td>5.000</td><td>5.000</td></tr>
-                <tr><td>Emissão de nota fiscal (imposto)</td><td>1</td><td>1.000</td><td>1.000</td></tr>
+                <tr><td>Emissão de nota fiscal (imposto)</td><td>1</td><td>1.500</td><td>1.500</td></tr>
                 <tr><td>Prestação de contas</td><td>1</td><td>1.200</td><td>1.200</td></tr>
                 <tr><td>Backdrop</td><td>1</td><td>1.200</td><td>1.200</td></tr>
-                <tr><th colspan="3">Total Geral Atualizado</th><th>25.800</th></tr>
+                <tr><th colspan="3">Total Geral Atualizado</th>
+                    <th>
+                        <!-- Valor calculado abaixo -->
+                        35.300
+                    </th>
+                </tr>
             </table>
         </div>
     </div>
