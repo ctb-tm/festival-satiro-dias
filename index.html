@@ -71,7 +71,6 @@
             padding: 30px 22px 0 22px;
             min-height: 400px;
         }
-        /* Fundo cyan para páginas 1, 2 e 3 */
         .main-page.cyan-bg {
             background: rgba(50,224,252,0.10);
             min-height: 100vh;
@@ -82,6 +81,10 @@
             border-radius: 10px;
             padding: 20px 20px 10px 20px;
             margin-bottom: 20px;
+        }
+        .box.text-center .box-title,
+        .box.text-center .box-text {
+            text-align: center;
         }
         .box-title {
             font-size: 18px;
@@ -108,6 +111,7 @@
         .images-box img {
             max-width: 23%;
             border-radius: 9px;
+            cursor: pointer;
         }
         .budget-box {
             background-color: rgba(50, 224, 252, 0.10);
@@ -158,7 +162,6 @@
             flex-direction: column;
             align-items: flex-start;
             font-size: 16px;
-            margin-top: 50px;
         }
         .footer strong {
             font-size: 19px;
@@ -187,7 +190,6 @@
             display: block;
             background: #19191b;
         }
-        /* Página 5 logomarca */
         .logo-box {
             background: #fff;
             border: 2px solid #19191b;
@@ -200,10 +202,11 @@
             max-width: 700px;
         }
         .logo-box img {
-            width: 350px;
+            width: 500px; /* Aumentei o tamanho da imagem */
             max-width: 95vw;
             height: auto;
             display: block;
+            cursor: pointer;
         }
         .logo-title {
             font-size: 22px;
@@ -211,8 +214,50 @@
             color: #032340;
             margin-bottom: 36px;
         }
+        /* Efeito Lightbox para maximizar imagens */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .lightbox:target {
+            display: flex;
+        }
+        /* Nova seção Visão Estratégica */
+        .vision-box {
+            text-align: center;
+            padding: 20px 40px;
+            margin: 40px 0 30px 0;
+        }
+        .vision-box strong {
+            font-size: 20px;
+            color: #032340;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .vision-box p {
+            font-size: 16px;
+            color: #0a0a0c;
+            font-style: italic;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
     </style>
     <script>
+        // Função para controlar a navegação das abas
         function showPage(idx) {
             document.querySelectorAll('.main-page').forEach((pg, i) => {
                 pg.classList.toggle('active', i === idx);
@@ -221,14 +266,48 @@
                 a.classList.toggle('active', i === idx);
             });
         }
+
+        // Função para abrir imagem no lightbox
+        function openLightbox(element) {
+            const src = element.getAttribute('src');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.setAttribute('src', src);
+            lightbox.style.display = 'flex';
+        }
+
+        // Executa quando a página é carregada
         window.onload = function() {
+            // Inicia na primeira página
             showPage(0);
+            
+            // Configura a navegação do menu
             document.querySelectorAll('.menu a').forEach((a, i) => {
                 a.onclick = function(e) {
                     e.preventDefault();
                     showPage(i);
                 }
             });
+
+            // Configura o lightbox
+            const lightbox = document.getElementById('lightbox');
+            // Fecha o lightbox ao clicar nele
+            lightbox.onclick = function() {
+                lightbox.style.display = 'none';
+            };
+
+            // Adiciona evento de clique a todas as imagens da galeria
+            document.querySelectorAll('.images-box img').forEach(img => {
+                img.onclick = function() {
+                    openLightbox(this);
+                };
+            });
+
+            // Adiciona evento de clique à logomarca da página 5
+            document.getElementById('main-logo').onclick = function() {
+                openLightbox(this);
+            };
         }
     </script>
 </head>
@@ -248,7 +327,7 @@
     </div>
 
     <div class="main-page cyan-bg active">
-        <div class="box">
+        <div class="box text-center">
             <div class="box-title">Bem-vindo ao Festival Amador de Ping Pong e Tênis de Mesa!</div>
             <div class="box-text">Promovendo esporte, inclusão e cidadania em Sátiro Dias.</div>
         </div>
@@ -265,13 +344,13 @@
         <div class="box">
             <div class="box-title">Histórico do Clube dos Tenistas da Bahia</div>
             <div class="box-text">
-                O Clube dos Tenistas da Bahia (CTB) foi fundado em Salvador com o propósito de democratizar o acesso ao esporte e à cidadania. Desde 2015, organiza torneios gratuitos, forma voluntários e promove ações em escolas municipais, comunidades, praças e projetos sociais.<br>
-                Realizou mais de 60 torneios oficiais e dezenas de oficinas para crianças e adolescentes em situação de risco social.<br>
-                O clube é reconhecido pelas parcerias com a Federação Baiana de Tênis de Mesa, órgãos públicos, entidades filantrópicas e federais de incentivo ao esporte.<br>
-                Seu calendário é anual e contempla campeonatos, clínicas, ações ambientais, distribuição de brindes, camisetas e kits esportivos.<br>
-                O CTB incentiva principalmente a inclusão social, com atividades voltadas para meninas e jovens com deficiência.<br>
-                Dispõe de estruturas para tênis e tênis de mesa, e lança projetos inovadores como “Educar com Tênis para Todos” e “Esporte é Vida”.<br>
-                O clube atua também em leis de incentivo estaduais e federais, estimulando novos talentos no cenário baiano e brasileiro.
+                O Clube dos Tenistas da Bahia (CTB) foi fundado em Salvador com o propósito de democratizar o acesso ao esporte e à cidadania. Desde 2015, organiza torneios gratuitos, forma voluntários e promove ações em escolas municipais, comunidades, praças e projetos sociais.<br><br>
+                Realizou mais de 60 torneios e dezenas de oficinas para crianças e adolescentes em situação de risco social.<br><br>
+                O clube é reconhecido pelas parcerias com a Federação Baiana de Tênis de Mesa, órgãos públicos, entidades filantrópicas e federais de incentivo ao esporte.<br><br>
+                Seu calendário é anual e contempla campeonatos, clínicas, ações ambientais, distribuição de brindes, camisetas e kits esportivos.<br><br>
+                O CTB incentiva principalmente a inclusão social, com atividades voltadas para meninas e jovens com deficiência.<br><br>
+                Dispõe de estruturas para tênis e tênis de mesa, e lança projetos inovadores como “Educar com Tênis de Mesa” e “Br Open Tenis”.<br><br>
+                O clube atua também em leis de incentivo estaduais e federais, estimulando novos talentos no cenário baiano e brasileiro com patrocinadores como Banco Itaú, BASF e Equinox Gold.
             </div>
         </div>
         <div class="images-box">
@@ -414,8 +493,13 @@
     <div class="main-page">
         <div class="logo-box">
             <div class="logo-title">Logomarca Oficial do Evento</div>
-            <img src="satiro1.png" alt="Logomarca Festival Sátiro Dias" />
+            <img src="satiro1.png" alt="Logomarca Festival Sátiro Dias" id="main-logo" />
         </div>
+    </div>
+
+    <div class="vision-box">
+        <strong>Visão Estratégica</strong>
+        <p>"Ser uma entidade de referência nacional na gestão de projetos esportivos inclusivos, reconhecida pela excelência, transparência e pelo impacto social positivo gerado na vida dos participantes e em suas comunidades, transformando a Bahia em um celeiro de talentos e cidadãos."</p>
     </div>
 
     <div class="footer">
@@ -425,5 +509,10 @@
         <p>paulo@ctb-ba.com.br</p>
         <p>71-98530-4903</p>
     </div>
+
+    <div id="lightbox" class="lightbox">
+        <img id="lightbox-img" src="" alt="Imagem maximizada">
+    </div>
+
 </body>
 </html>
